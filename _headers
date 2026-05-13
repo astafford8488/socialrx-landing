@@ -5,3 +5,27 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://snap.licdn.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' https: data:; font-src 'self' https://fonts.gstatic.com; media-src 'self' https://pub-05e8dacf7beb4671876ba7cadcbf9176.r2.dev; connect-src 'self' https://snap.licdn.com https://px.ads.linkedin.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-src https://api.leadconnectorhq.com;
+
+/styles.css
+  Cache-Control: public, max-age=604800, immutable
+
+/og-image.png
+  Cache-Control: public, max-age=604800
+
+/logo.png
+  Cache-Control: public, max-age=604800
+
+/llms.txt
+  Cache-Control: public, max-age=86400
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+/privacy.html
+  Cache-Control: public, max-age=3600
+
+/404.html
+  Cache-Control: no-store
