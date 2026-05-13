@@ -47,6 +47,14 @@
             }
         }
     </script>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-75ZW0PLB0B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-75ZW0PLB0B');
+    </script>
     <!-- LinkedIn Insight Tag -->
     <script type="text/javascript">
         _linkedin_partner_id = "9132994";
@@ -173,6 +181,31 @@
             if (typeof lintrk === 'function') {
                 lintrk('track', { conversion_id: 27381490 });
             }
+        });
+    </script>
+
+    <!-- Video Tracking Events -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.querySelector('video');
+            if (!video) return;
+            var milestones = {25: false, 50: false, 75: false};
+            video.addEventListener('play', function() {
+                gtag('event', 'video_play', {video_title: 'confirmation_video', video_provider: 'r2'});
+            });
+            video.addEventListener('timeupdate', function() {
+                if (!video.duration) return;
+                var pct = Math.floor((video.currentTime / video.duration) * 100);
+                [25, 50, 75].forEach(function(m) {
+                    if (pct >= m && !milestones[m]) {
+                        milestones[m] = true;
+                        gtag('event', 'video_progress', {video_title: 'confirmation_video', video_percent: m});
+                    }
+                });
+            });
+            video.addEventListener('ended', function() {
+                gtag('event', 'video_complete', {video_title: 'confirmation_video', video_provider: 'r2'});
+            });
         });
     </script>
 
