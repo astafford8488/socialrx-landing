@@ -1,0 +1,24 @@
+{
+  "name": "docpresence-landing",
+  "version": "1.0.0",
+  "description": "Marketing site for **SocialRx** — done-for-you social media management built exclusively for physicians. SocialRx handles content creation, posting, and ad management so doctors can focus on patient care.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astafford8488/socialrx-landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/astafford8488/socialrx-landing/issues"
+  },
+  "homepage": "https://github.com/astafford8488/socialrx-landing#readme",
+  "dependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

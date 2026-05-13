@@ -17,48 +17,10 @@
     <link rel="canonical" href="https://socialrx.biz/">
     <link rel="icon" href="/logo.png" type="image/png">
     <link rel="apple-touch-icon" href="/logo.png">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            50: '#f0f4f8',
-                            100: '#d9e2ec',
-                            200: '#bcccdc',
-                            300: '#9fb3c8',
-                            400: '#829ab1',
-                            500: '#627d98',
-                            600: '#486581',
-                            700: '#334e68',
-                            800: '#243b53',
-                            900: '#102a43',
-                            950: '#0a1929',
-                        },
-                        teal: {
-                            50: '#effcf6',
-                            100: '#c6f7e2',
-                            200: '#8eedc7',
-                            300: '#65d6ad',
-                            400: '#3ebd93',
-                            500: '#27ab83',
-                            600: '#199473',
-                            700: '#147d64',
-                            800: '#0c6b58',
-                            900: '#014d40',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="/styles.css">
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-75ZW0PLB0B"></script>
     <script>
@@ -157,6 +119,63 @@
         "sameAs": []
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Does social media work for doctors?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The vast majority of patients research their doctors online before booking. Your competitors are already there. The question isn't whether social media works for physicians — it's whether patients can find you when they search."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "I tried posting before and it didn't do anything.",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Posting randomly without a strategy doesn't work. We use data-driven strategies specific to your specialty, with content formats proven to drive engagement and patient inquiries."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much time will this take from me?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "With our Done-For-You packages, less than 30 minutes per month. We send you content for quick approval via text or email — a thumbs up is all we need. You focus on patients, we focus on your presence."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What about HIPAA? I can't post patient info.",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Every piece of content goes through our HIPAA-aware review process. We focus on educational content, your expertise, behind-the-scenes practice culture, and properly consented patient stories."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why can't I just hire someone cheap on Fiverr?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Generic social media managers don't understand medical marketing, HIPAA compliance, or what converts healthcare consumers. We specialize in physician social media — the strategies, the compliance, and the content that builds real authority."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long until I see results?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most physicians see measurable engagement growth within 30 days and patient inquiries from social media within 60-90 days. With paid ads, results can come even faster. We track everything and report monthly."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
 </head>
 <body class="font-sans text-navy-900 bg-white antialiased">
 
@@ -164,7 +183,7 @@
     <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-navy-100 z-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
             <a href="#" class="flex items-center gap-3">
-                <img src="logo.png" alt="SocialRx" class="h-10 w-auto">
+                <img src="logo.png" alt="SocialRx" class="h-10 w-auto" width="120" height="40">
                 <span class="hidden md:inline text-navy-400 text-xs font-medium border-l border-navy-200 pl-3">The Prescription for Practice Growth</span>
             </a>
             <a href="#book" class="hidden sm:inline-flex items-center px-5 py-2.5 bg-teal-600 text-white text-sm font-semibold rounded-lg hover:bg-teal-700 transition-colors">
@@ -683,6 +702,48 @@
                 gtag('event', 'video_complete', {video_title: 'authority_video', video_provider: 'r2'});
             });
         });
+    </script>
+
+    <!-- CTA Click Tracking -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Track all #book anchor clicks (nav, hero, pricing CTAs)
+        document.querySelectorAll('a[href="#book"]').forEach(function(el) {
+            el.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    event_category: 'engagement',
+                    event_label: el.textContent.trim().substring(0, 50),
+                    cta_location: el.closest('section') ? el.closest('section').id || 'unknown' : 'nav'
+                });
+            });
+        });
+        // Track the final booking link (LeadConnector)
+        var bookingLink = document.querySelector('a[href*="leadconnectorhq.com"]');
+        if (bookingLink) {
+            bookingLink.addEventListener('click', function() {
+                gtag('event', 'booking_click', {
+                    event_category: 'conversion',
+                    event_label: 'strategy_session_99',
+                    value: 99
+                });
+            });
+        }
+    });
+    </script>
+
+    <!-- Cookie Consent -->
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+    <script>
+    window.cookieconsent.initialise({
+        palette: { popup: { background: "#102a43" }, button: { background: "#27ab83" } },
+        theme: "classic",
+        content: {
+            message: "We use cookies for analytics and advertising. By continuing, you consent to our use of cookies.",
+            dismiss: "Got it!",
+            link: "Privacy Policy",
+            href: "/privacy.html"
+        }
+    });
     </script>
 
 </body>
