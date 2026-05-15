@@ -27,5 +27,14 @@
 /privacy.html
   Cache-Control: public, max-age=3600
 
+/blog/physician-instagram-analysis.html
+  Cache-Control: public, max-age=3600
+
+/blog/healthcare-social-media-benchmarks-2026.html
+  Cache-Control: public, max-age=3600
+
+/blog/patients-choose-doctors-social-media.html
+  Cache-Control: public, max-age=3600
+
 /404.html
   Cache-Control: no-store
