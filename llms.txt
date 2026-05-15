@@ -1,28 +1,50 @@
 # SocialRx
 
-> Done-for-you social media management built for busy physicians.
+> Done-for-you social media management for physicians — build authority, attract patients, and grow your practice in 90 days.
 
-SocialRx helps physicians build authority, attract patients, and grow their practice through professional social media management. We handle content creation, paid advertising, authority webinars, analytics, and reputation management — all with HIPAA-aware processes.
+SocialRx is a physician-focused social media management agency. We create HIPAA-compliant content, manage paid advertising across Meta, LinkedIn, and Google, produce authority-building webinars, and provide monthly analytics and growth reporting. Founded by Andrew Stafford, SocialRx operates under Your AI Group (YAIG).
+
+## Key Facts
+
+- Specializes exclusively in physician and healthcare provider social media
+- All content goes through a HIPAA-aware review process
+- 90-Day Growth Guarantee: measurable patient growth or we work free until you get it
+- Manages Instagram, Facebook, LinkedIn, TikTok, YouTube, and X
+- Limits clients per specialty per market to prevent internal competition
+- Typical results: measurable engagement growth within 30 days, patient inquiries within 60-90 days
+- Less than 30 minutes per month required from the physician
+- No long-term contracts — month-to-month billing
 
 ## Services
 
-- Social Media Management (3-5+ platforms)
-- Paid Advertising (Meta, LinkedIn, Google)
-- Authority Webinar Production
-- Analytics & Growth Strategy
-- Online Reputation Management
+- Social Media Management: Content creation, scheduling, and community management across 3-6+ platforms with HIPAA-compliant processes
+- Paid Advertising: Campaign management on Meta (Facebook/Instagram), LinkedIn, and Google with ROI tracking
+- Authority Webinars: Monthly or weekly physician-led webinar production to establish thought leadership
+- Analytics & Growth Strategy: Monthly reporting with engagement metrics, follower growth, patient inquiry attribution
+- Online Reputation Management: Review monitoring, response management, and reputation building
 
-## Plans
+## Plans & Pricing
 
-- Practice Launchpad: $1,497/mo — 3 platforms, 12 posts/month
-- Growth Accelerator: $2,997/mo — 5 platforms, 20 posts/month, paid ads
-- Authority Builder: $4,997/mo — All platforms, 30+ posts/month, full service
+- Practice Launchpad ($1,497/mo): 3 platforms, 12 posts/month, branded templates, basic analytics
+- Growth Accelerator ($2,997/mo): 5 platforms, 20 posts/month, paid ad management, monthly webinars, advanced analytics
+- Authority Builder ($4,997/mo): All platforms, 30+ posts/month, full ad management, weekly webinars, dedicated strategist
 
-## Guarantee
+## FAQ
 
-90-Day Growth Guarantee — measurable patient growth or we work free until you get it.
+- Does social media work for doctors? Yes — the majority of patients research doctors online before booking. Social media builds the authority and visibility that converts searchers into patients.
+- How much time does this take from the physician? Less than 30 minutes per month. We send content for quick approval via text or email.
+- What about HIPAA compliance? Every piece of content goes through our HIPAA-aware review process. We focus on educational content, expertise, and properly consented patient stories.
+- How is SocialRx different from generic agencies? We specialize exclusively in physician social media — the strategies, compliance requirements, and content that builds real medical authority.
+
+## Resources
+
+- [Homepage](https://socialrx.biz/): Full service overview, pricing, testimonials, and booking
+- [Privacy Policy](https://socialrx.biz/privacy.html): Data handling and privacy practices
+- [Book a Strategy Session](https://socialrx.biz/#book): $99 strategy session booking
 
 ## Contact
 
 - Website: https://socialrx.biz
 - Book a Strategy Session: https://socialrx.biz/#book
+- Parent Company: Your AI Group (YAIG)
+- Founder: Andrew Stafford
