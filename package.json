@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/astafford8488/socialrx-landing#readme",
   "dependencies": {
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.19"
   }
 }
