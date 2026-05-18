@@ -397,7 +397,7 @@
     <!-- Hero Image -->
     <section class="py-12 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <img src="img-hero.webp" alt="Physician reviewing social media analytics on tablet in modern medical office" class="rounded-2xl shadow-lg w-full" width="1200" height="800" loading="lazy">
+            <img src="img-hero.webp" alt="Physician reviewing social media analytics on tablet in modern medical office" class="rounded-2xl shadow-lg w-full max-h-[400px] object-cover" width="1200" height="800" loading="lazy">
         </div>
     </section>
 
@@ -433,7 +433,7 @@
                 <p class="text-navy-500 text-lg">We don't just post for you. We build a complete social media presence tailored to your specialty that turns followers into patients. Physicians who post consistently see 3-4x more patient inquiries than those with inactive profiles.</p>
             </div>
             <div class="max-w-4xl mx-auto mb-16">
-                <img src="img-services.webp" alt="Social media content management dashboard showing scheduled healthcare posts across Instagram, Facebook, and LinkedIn" class="rounded-2xl shadow-md w-full" width="1200" height="800" loading="lazy">
+                <img src="img-services.webp" alt="Social media content management dashboard showing scheduled healthcare posts across Instagram, Facebook, and LinkedIn" class="rounded-2xl shadow-md w-full max-h-[400px] object-cover" width="1200" height="800" loading="lazy">
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="flex gap-4">
@@ -653,7 +653,7 @@
     <!-- Results Visual -->
     <section class="py-12 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <img src="img-results.webp" alt="Social media analytics dashboard showing upward growth trends in followers, engagement, and patient inquiries" class="rounded-2xl shadow-lg w-full" width="1200" height="800" loading="lazy">
+            <img src="img-results.webp" alt="Social media analytics dashboard showing upward growth trends in followers, engagement, and patient inquiries" class="rounded-2xl shadow-lg w-full max-h-[400px] object-cover" width="1200" height="800" loading="lazy">
         </div>
     </section>
 
@@ -731,7 +731,7 @@
     <!-- Practice Image -->
     <section class="py-12 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <img src="img-practice.webp" alt="Modern medical practice waiting room with warm lighting and welcoming atmosphere" class="rounded-2xl shadow-lg w-full" width="1200" height="800" loading="lazy">
+            <img src="img-practice.webp" alt="Modern medical practice waiting room with warm lighting and welcoming atmosphere" class="rounded-2xl shadow-lg w-full max-h-[400px] object-cover" width="1200" height="800" loading="lazy">
         </div>
     </section>
 
@@ -989,31 +989,25 @@
         e.preventDefault();
         var email = document.getElementById('lead-email').value;
         if (!email) return;
-        // Send to GHL via API
-        fetch('https://services.leadconnectorhq.com/contacts/', {
+        // Send to serverless proxy (token stored server-side)
+        fetch('/api/lead', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer pit-3d87a0a3-06db-4738-b61a-e75a9e859a29'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 email: email,
-                locationId: 'oc5ZBnsJu1XdmvhPVhEq',
                 tags: ['lead-magnet', 'physician-playbook'],
                 source: 'website-lead-magnet'
             })
         }).then(function() {
-            // Track in GA4
             gtag('event', 'lead_magnet_download', {
                 event_category: 'conversion',
                 event_label: 'physician_playbook_2026'
             });
-            // Track in LinkedIn
             if (typeof lintrk === 'function') {
                 lintrk('track', { conversion_id: 27381490 });
             }
         }).catch(function() {});
-        // Show success state immediately (don't wait for API)
+        sessionStorage.setItem('srx_lead_captured', '1');
         var form = document.getElementById('lead-magnet-form');
         form.innerHTML = '<div class="text-center py-4"><svg class="w-12 h-12 text-teal-400 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><p class="text-white font-bold text-lg">Check Your Email!</p><p class="text-navy-300 text-sm mt-1">Your playbook is on its way. Check spam if you don\'t see it in a few minutes.</p></div>';
     }
@@ -1067,10 +1061,10 @@
             e.preventDefault();
             var email = document.getElementById('exit-popup-email').value;
             if (!email) return;
-            fetch('https://services.leadconnectorhq.com/contacts/', {
+            fetch('/api/lead', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer pit-3d87a0a3-06db-4738-b61a-e75a9e859a29' },
-                body: JSON.stringify({ email: email, locationId: 'oc5ZBnsJu1XdmvhPVhEq', tags: ['lead-magnet', 'physician-playbook', 'exit-intent'], source: 'website-exit-intent' })
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, tags: ['lead-magnet', 'physician-playbook', 'exit-intent'], source: 'website-exit-intent' })
             }).then(function() {
                 gtag('event', 'lead_magnet_download', { event_category: 'conversion', event_label: 'exit_intent_playbook' });
                 if (typeof lintrk === 'function') { lintrk('track', { conversion_id: 27381490 }); }
